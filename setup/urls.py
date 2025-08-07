@@ -21,5 +21,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('crud_base.urls')),  # Include URLs from the crud_base app
+    path('', include('crud_base.urls')), 
+    path('', include('marketplace.urls'))
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # Serve media files during development
