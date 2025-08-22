@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senai Games - Cadastro</title>
+    <!-- Inclui a fonte 'Poppins' do Google Fonts para um estilo moderno -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{% static 'styles/style_cadastro.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="auth-container">
+        <h1>Criar Conta</h1>
+        <p class="subtitle">Junte-se a nós para entrar no universo do jogo.</p>
+
+        <form action="#" method="POST">
+            <div class="input-group">
+                <input type="text" id="name" name="name" placeholder=" " required>
+                <label for="name">Nome Completo</label>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" name="email" placeholder=" " required>
+                <label for="email">E-mail</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder=" " required>
+                <label for="password">Senha</label>
+            </div>
+            
+
+            <div class="input-group">
+                <input type="password" id="confirm-password" name="confirm-password" placeholder=" " required>
+                <label for="confirm-password">Confirmar Senha</label>
+            </div>
+            <button type="submit" class="auth-button">Cadastrar</button>
+        </form>
+
+        <div class="auth-links">
+            <a>Já tem uma conta? </a>
+            <a href="{% url 'membro' %}">Fazer Login</a>
+        </div>
+    </div>
+
+    <!-- Adds dynamic particles to the background with JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.background-particles');
+            const numParticles = 30;
+
+            for (let i = 0; i < numParticles; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                const size = Math.random() * 5 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                particle.style.left = `${x}vw`;
+                particle.style.top = `${y}vh`;
+
+                const delay = Math.random() * 5;
+                particle.style.animationDelay = `${delay}s`;
+
+                container.appendChild(particle);
+            }
+        });
+    </script>
+    <div class="background-particles"></div>
+</body>
+
+</html>
